@@ -14,7 +14,24 @@ The `merge_sort` function:
         want to sort
 	-> If the element which is inputted into the function is a single number, then its output is 
         the same as its input (there is nothing to sort)
+"""
 
+def merge_sort(array):
+    if len(array) <= 1:
+        return
+    
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+
+    merge_sort(left_part)
+    merge_sort(right_part)
+
+    left_array_index = 0
+    right_array_index = 0
+    sorted_index = 0
+
+"""
 Dividing the input array:
 	-> If the array contains a larger amount of elements, we divide it into two - by finding the 
         central one <- This is the 'middle point' of our array, and each of the parts on either 
@@ -34,28 +51,7 @@ Sorting and merging the array:
 	-> Then populating the `array` variable with it 
 	-> Carrying this on until we exhaust all of the list elements 
 	-> Once the `array` variable has been sorted, the function then returns it 
-
-Testing the function:
-	-> We are inputting an array into the function  
-	-> And testing it to see if this outputs the sorted array (which in this case it does)
-	-> This tests it on the `[4, 10, 6, 14, 2, 1, 8, 5]` example array 
-	-> It is printing the unsorted array, and then the sorted one using the `merge_sort` function 
 """
-
-def merge_sort(array):
-    if len(array) <= 1:
-        return
-    
-    middle_point = len(array) // 2
-    left_part = array[:middle_point]
-    right_part = array[middle_point:]
-
-    merge_sort(left_part)
-    merge_sort(right_part)
-
-    left_array_index = 0
-    right_array_index = 0
-    sorted_index = 0
 
     while left_array_index < len(left_part) and right_array_index < len(right_part):
         if left_part[left_array_index] < right_part[right_array_index]:
@@ -75,6 +71,14 @@ def merge_sort(array):
         array[sorted_index] = right_part[right_array_index]
         right_array_index += 1
         sorted_index += 1
+
+"""
+Testing the function:
+	-> We are inputting an array into the function  
+	-> And testing it to see if this outputs the sorted array (which in this case it does)
+	-> This tests it on the `[4, 10, 6, 14, 2, 1, 8, 5]` example array 
+	-> It is printing the unsorted array, and then the sorted one using the `merge_sort` function 
+"""
 
 if __name__ == '__main__':
     numbers = [4, 10, 6, 14, 2, 1, 8, 5]
