@@ -16,20 +16,28 @@
 
 	-> We do this recursively, until the sub-parts are merged into a sorted sequence 
 	-> // <- Integer division 
+
 	-> array[:middle_point] <- To extract everything up to the middle point of an array 
 		-> `middle_point` is the name of the variable we define which stores the length of the input array, divided by two 
-		-> We can define the index we want to slice the array up to as a variable, and then use that variable instead of the number which it stores 
-		-> Slicing before and after the index of the element in the list which is stored at this number gives us its left and right halves
-		-> We are storing these in two variables, `left_part` and `right_part` <- This is for the part of the algorithm which takes the input array and performs the 'divide and conquer' approach 
+		-> We can define the index we want to slice the array up to as a variable, and then use that variable instead of the 
+			number which it stores 
+		-> Slicing before and after the index of the element in the list which is stored at this number gives us its left and 
+			right halves
+		-> We are storing these in two variables, `left_part` and `right_part` <- This is for the part of the algorithm which 
+			takes the input array and performs the 'divide and conquer' approach 
 	-> We define a single function which takes an input list and divides it into two 
-	-> And then we carry on dividing that list into two again and again, until each of the elements in it form their own list <- Then we want to sort them and put them back together  
+	-> And then we carry on dividing that list into two again and again, until each of the elements in it form their own list <- Then 
+		we want to sort them and put them back together  
 	-> So we recursively call `merge_sort` inside the function, to do this
 	-> We are calling the merge_sort() function inside the definition of the merge_sort function <- We are calling it inside its own definition 
+
 	-> Then we sort and merge the lists into the original array: 
 		-> This is a comparison which we do 
-		-> Take the input array, break the elements down into their own lists, compare each of these lists and then put them back together into the sorted array  
-	-> We set up three variables for this -> for the left and right array indices, and for the sorted index 
-	-> This is done with a series of while and if loops in the code 
+		-> Take the input array, break the elements down into their own lists, compare each of these lists and then put them back together 
+			into the sorted array  
+	-> We set up three variables for this -> for the left and right array indices, and for the sorted index
+ 
+	-> This is done with a series of while and if loops in the code: 
 		-> We are setting up if statements to consider comparison cases, to implement the sorting algorithm 
 		-> Then assigning the individual elements to the sorted array 
 		-> right_array_index += 1 <- This is the 'augmented assignment addition operator'
@@ -37,6 +45,7 @@
 			-> We are using this to move to the next index in the sorted array 
 			-> Reusing the logic that we write for the right part of the list, but for the left 
 			-> Then moving to the next index in the sorted array 
+
 -> And then once we have defined the functions which do this, we need to test them for the different use cases 
 -> We write code for the elements in the first half of the input array, and then we repeat that same code but for its second half
 -> We also need to define a base case for this, which stops the recursion call (function) executing once the list has been sorted
@@ -46,5 +55,6 @@
 	-> If this .py file is the main program, then execute this block of code to test the function 
 	-> Otherwise, the .py file is one which writes modules, in which case the block tells the computer not to run the function 
 	-> We are doing this to test it  
-	-> __main__ <- This literally refers to the main program, it's telling us if this is the main program in the .py file, or if it's for a module instead
+	-> __main__ <- This literally refers to the main program, it's telling us if this is the main program in the .py file, or if it's for a 
+		module instead
 	-> Then inside this block, we are testing the function     
